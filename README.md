@@ -18,7 +18,7 @@
 
 ## 📌 Overview
 
-HTTP security headers auditor & hardening advisor
+OHeaders — Security Headers Auditor. It provides single URL audit with full redirect-chain capture (stdlib urllib, custom UA, timeout, TLS verify toggle). Findings and exports support authorised defensive assessments within the OwlSec Toolkit.
 
 ---
 
@@ -30,14 +30,6 @@ HTTP security headers auditor & hardening advisor
 - Cookie auditor — Secure / HttpOnly / SameSite, __Host- / __Secure- prefix rules, scope, lifetime
 - CORS checker — active Origin probes (evil / null), reflected origin, wildcard + credentials detection
 - Clickjacking — X-Frame-Options vs frame-ancestors
-- XCTO, Referrer-Policy, Permissions-Policy, COOP, COEP, CORP, Cache-Control, info-disclosure checks
-- HTTP→HTTPS upgrade check + TLS certificate reader (issuer, subject, SAN match, expiry, protocol, cipher)
-- Weighted A+…F grade with per-category subscores
-- Remediation generator — recommended CSP, Nginx, Apache, Caddy, IIS and HAProxy config snippets
-- Batch mode (threaded) with summary table
-- Baseline snapshots (JSON) + regression diff
-- Offline raw-header analysis (paste or file)
-- Save report (TXT / CSV / JSON) with location chooser
 
 ---
 
@@ -51,7 +43,10 @@ HTTP security headers auditor & hardening advisor
 ## 🚀 Usage
 
 ```bash
-./OHeaders
+./OHeaders                                     # interactive menu
+./OHeaders --json -o report.json
+./OHeaders --url https://example.com
+./OHeaders --help
 ```
 
 ---
